@@ -10,7 +10,7 @@ public class ThirdPersonCharacterController : MonoBehaviour {
     public GameObject currentCheckpoint;
 
     private void Start() {
-        rotationSpeed = 5 * speed;
+        rotationSpeed = 20 * speed;
     }
 
     // Update is called once per frame
@@ -45,12 +45,16 @@ public class ThirdPersonCharacterController : MonoBehaviour {
     }
 
     void playerControls() {
-        if (Input.GetKey(KeyCode.Space)) {
+        if (Input.GetKey(KeyCode.Return)) {
             if (currentCheckpoint == null) {
                 transform.position = new Vector3(0f, 1f, 0f);
             } else {
                 transform.position = currentCheckpoint.transform.position + new Vector3(0, 1.5f, 0);
             }
+        }
+
+        if(Input.GetKey(KeyCode.Space)) {
+            rb.AddForce(new Vector3(0, 1, 0) * speed);
         }
     }
 
