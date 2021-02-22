@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Checkpoint
   - Wall
+  - Floor
+  - Item
+  - Death
   layers:
   - Default
   - TransparentFX
